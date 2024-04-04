@@ -100,7 +100,7 @@ def plot_features(column,img_name,description):
     while idx<225:
         for key,value in {'nm07':nm07,'nm17':nm17,'ne07':ne07,'ne17':ne17}.items():
             ax = plt.subplot(idx)
-            plt.title(f'$\it{key.upper()}$')
+            plt.title(f'$\textit{key.upper()}$')
             sns.countplot(value[column])
             ax.axhline(y=value[value[column]==1][column].size,linewidth=1,color='r')
             ax.set_xlabel('')
@@ -116,7 +116,7 @@ def plot_features_hist(column,img_name,description):
     while idx<225:
         for key,value in {'nm07':nm07,'nm17':nm17,'ne07':ne07,'ne17':ne17}.items():
             ax = plt.subplot(idx)
-            plt.title(f'$\it{key.upper()}$')
+            plt.title(f'$\textit{key.upper()}$')
             plt.hist(value[column],bins=20,range=(1,value[column].max()))
             ax.set_xlabel(f"Number of zero's:{value[value[column]==0][column].count()}")
             ax.xaxis.set_label_coords(0.15, 1.05)
